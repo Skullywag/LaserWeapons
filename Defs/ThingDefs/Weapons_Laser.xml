@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ThingDefs>
+  
+  <!-- ======================Laser========================================-->
+
+  <ThingDef Name="BaseGun" Abstract="True">
+    <category>Item</category>
+    <thingClass>ThingWithComps</thingClass>
+    <equipmentType>Primary</equipmentType>
+    <pathCost>10</pathCost>
+    <useHitPoints>True</useHitPoints>
+    <selectable>True</selectable>
+    <graphicData>
+      <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+    </graphicData>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+      <SellPriceFactor>0.5</SellPriceFactor>
+    </statBases>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>True</alwaysHaulable>
+    <tickerType>Never</tickerType>
+    <techLevel>Midworld</techLevel>
+    <thingCategories>
+      <li>WeaponsRanged</li>
+    </thingCategories>
+    <inspectorTabs>
+      <li>ITab_Art</li>
+    </inspectorTabs>
+    <comps>
+      <li>
+        <compClass>CompForbiddable</compClass>
+      </li>
+      <li>
+        <compClass>CompEquippable</compClass>
+      </li>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li>
+        <compClass>CompArt</compClass>
+        <nameMaker>NamerGun</nameMaker>
+        <descriptionMaker>ArtWeaponGun</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>
+    </comps>
+    <smeltProducts>
+      <Steel>20</Steel>
+    </smeltProducts>
+  </ThingDef>
+  
+  <ThingDef Name="BaseHumanGun" ParentName="BaseGun" Abstract="True">
+    <weaponTags>
+      <li>Gun</li>
+    </weaponTags>
+    <soundInteract>EnergyPickup</soundInteract>
+  </ThingDef>
+
+  <ThingDef Name="BaseBullet" Abstract="True">
+    <category>Projectile</category>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Projectile</altitudeLayer>
+    <thingClass>Bullet</thingClass>
+    <label>bullet</label>
+    <useHitPoints>False</useHitPoints>
+    <neverMultiSelect>True</neverMultiSelect>
+    <graphicData>
+      <shaderType>Transparent</shaderType>
+    </graphicData>
+  </ThingDef>
+
+  <!-- ============================================================== -->
+
+  <ThingDef Class="LaserWeapons.ThingDef_LaserProjectile" ParentName="BaseBullet">
+    <defName>Bullet_LaserPistol</defName>
+    <thingClass>LaserWeapons.Projectile_Laser</thingClass>
+    <label>Bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/LaserSmall</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>LaserImpact</damageDef>
+      <damageAmountBase>6</damageAmountBase>
+      <speed>45</speed>
+    </projectile>
+    <preFiringInitialIntensity>0</preFiringInitialIntensity>
+    <preFiringFinalIntensity>1</preFiringFinalIntensity>
+    <postFiringInitialIntensity>1</postFiringInitialIntensity>
+    <postFiringFinalIntensity>0</postFiringFinalIntensity>
+    <preFiringDuration>7</preFiringDuration>
+    <postFiringDuration>23</postFiringDuration>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseHumanGun">
+    <defName>Gun_LaserPistol</defName>
+    <label>Laser Pistol</label>
+    <description>A laser pistol sidearm.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/Laser/LaserPistol</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>400</MarketValue>
+      <AccuracyTouch>0.93</AccuracyTouch>
+      <AccuracyShort>0.73</AccuracyShort>
+      <AccuracyMedium>0.53</AccuracyMedium>
+      <AccuracyLong>0.35</AccuracyLong>
+      <RangedWeapon_Cooldown>0.66</RangedWeapon_Cooldown>
+    </statBases>
+    <techLevel>Midworld</techLevel>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <projectileDef>Bullet_LaserPistol</projectileDef>
+        <warmupTicks>54</warmupTicks>
+        <range>24</range>
+        <soundCast>LazerShot</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <!-- ========================================================= -->
+
+  <ThingDef Class="LaserWeapons.ThingDef_LaserProjectile" ParentName="BaseBullet">
+    <defName>Bullet_LaserCarbine</defName>
+    <thingClass>LaserWeapons.Projectile_Laser</thingClass>
+    <label>Bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/LaserSmall</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>LaserImpact</damageDef>
+      <damageAmountBase>7</damageAmountBase>
+      <speed>45</speed>
+    </projectile>
+    <preFiringInitialIntensity>0</preFiringInitialIntensity>
+    <preFiringFinalIntensity>1</preFiringFinalIntensity>
+    <postFiringInitialIntensity>1</postFiringInitialIntensity>
+    <postFiringFinalIntensity>0</postFiringFinalIntensity>
+    <preFiringDuration>7</preFiringDuration>
+    <postFiringDuration>35</postFiringDuration>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseHumanGun">
+    <defName>Gun_LaserCarbine</defName>
+    <label>Laser Carbine</label>
+    <description>A short range, lightweight laser rifle.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/Laser/LaserCarbine</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>750</MarketValue>
+      <AccuracyTouch>0.78</AccuracyTouch>
+      <AccuracyShort>0.95</AccuracyShort>
+      <AccuracyMedium>0.75</AccuracyMedium>
+      <AccuracyLong>0.62</AccuracyLong>
+      <RangedWeapon_Cooldown>0.66</RangedWeapon_Cooldown>
+    </statBases>
+    <techLevel>Midworld</techLevel>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <projectileDef>Bullet_LaserCarbine</projectileDef>
+        <warmupTicks>60</warmupTicks>
+        <range>24</range>
+        <soundCast>LazerShot</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+  
+  <!-- =================================================== -->
+
+  <ThingDef Class="LaserWeapons.ThingDef_LaserProjectile" ParentName="BaseBullet">
+    <defName>Bullet_LaserRifle</defName>
+    <thingClass>LaserWeapons.Projectile_Laser</thingClass>
+    <label>Bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/LaserMedium</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>LaserImpact</damageDef>
+      <damageAmountBase>7</damageAmountBase>
+      <speed>45</speed>
+    </projectile>
+    <preFiringInitialIntensity>0</preFiringInitialIntensity>
+    <preFiringFinalIntensity>1</preFiringFinalIntensity>
+    <postFiringInitialIntensity>1</postFiringInitialIntensity>
+    <postFiringFinalIntensity>0</postFiringFinalIntensity>
+    <preFiringDuration>7</preFiringDuration>
+    <postFiringDuration>60</postFiringDuration>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseHumanGun">
+    <defName>Gun_LaserRifle</defName>
+    <label>Laser Rifle</label>
+    <description>A laser rifle with good stopping power and range.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/Laser/LaserRifle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>850</MarketValue>
+      <AccuracyTouch>0.73</AccuracyTouch>
+      <AccuracyShort>0.90</AccuracyShort>
+      <AccuracyMedium>0.80</AccuracyMedium>
+      <AccuracyLong>0.67</AccuracyLong>
+      <RangedWeapon_Cooldown>0.66</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <projectileDef>Bullet_LaserRifle</projectileDef>
+        <warmupTicks>90</warmupTicks>
+        <range>32</range>
+        <soundCast>LazerShot</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+  
+  <!-- ============================================================== -->
+
+  <ThingDef Class="LaserWeapons.ThingDef_LaserProjectile" ParentName="BaseBullet">
+    <defName>Bullet_LaserScatter</defName>
+    <thingClass>LaserWeapons.Projectile_Laser</thingClass>
+    <label>Bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/LaserSmall</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>LaserImpact</damageDef>
+      <damageAmountBase>6</damageAmountBase>
+      <speed>45</speed>
+    </projectile>
+    <preFiringInitialIntensity>0</preFiringInitialIntensity>
+    <preFiringFinalIntensity>1</preFiringFinalIntensity>
+    <postFiringInitialIntensity>1</postFiringInitialIntensity>
+    <postFiringFinalIntensity>0</postFiringFinalIntensity>
+    <preFiringDuration>7</preFiringDuration>
+    <postFiringDuration>50</postFiringDuration>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseHumanGun">
+    <defName>Gun_LaserScatter</defName>
+    <label>Laser Scattergun</label>
+    <description>A laser scattergun able to lay down lots of fire at the cost of accuracy at long ranges.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/Laser/LaserScatter</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>800</MarketValue>
+      <AccuracyTouch>0.53</AccuracyTouch>
+      <AccuracyShort>0.67</AccuracyShort>
+      <AccuracyMedium>0.44</AccuracyMedium>
+      <AccuracyLong>0.25</AccuracyLong>
+      <RangedWeapon_Cooldown>1.33</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <projectileDef>Bullet_LaserScatter</projectileDef>
+        <warmupTicks>100</warmupTicks>
+        <range>20</range>
+        <burstShotCount>6</burstShotCount>
+        <ticksBetweenBurstShots>11</ticksBetweenBurstShots>
+        <soundCast>LazerShot</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <!-- ============================================================== -->
+
+  <ThingDef Class="LaserWeapons.ThingDef_LaserProjectile" ParentName="BaseBullet">
+    <defName>Bullet_LaserPrecision</defName>
+    <thingClass>LaserWeapons.Projectile_Laser</thingClass>
+    <label>Bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/LaserMedium</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>LaserImpact</damageDef>
+      <damageAmountBase>30</damageAmountBase>
+      <speed>45</speed>
+    </projectile>
+    <preFiringInitialIntensity>0</preFiringInitialIntensity>
+    <preFiringFinalIntensity>1</preFiringFinalIntensity>
+    <postFiringInitialIntensity>1</postFiringInitialIntensity>
+    <postFiringFinalIntensity>0</postFiringFinalIntensity>
+    <preFiringDuration>7</preFiringDuration>
+    <postFiringDuration>75</postFiringDuration>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseHumanGun">
+    <defName>Gun_LaserPrecision</defName>
+    <label>Laser Precision Rifle</label>
+    <description>A laser sniper rifle, highly accurate but with a low rate of fire.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/Laser/LaserPrecision</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>1050</MarketValue>
+      <AccuracyTouch>0.53</AccuracyTouch>
+      <AccuracyShort>0.89</AccuracyShort>
+      <AccuracyMedium>0.89</AccuracyMedium>
+      <AccuracyLong>0.91</AccuracyLong>
+      <RangedWeapon_Cooldown>2.33</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <projectileDef>Bullet_LaserPrecision</projectileDef>
+        <warmupTicks>240</warmupTicks>
+        <range>45</range>
+        <soundCast>LazerShot</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <weaponTags>
+      <li>SniperRifle</li>
+    </weaponTags>
+  </ThingDef>
+  
+  <!--===========================================================-->
+
+  <ThingDef Class="LaserWeapons.ThingDef_LaserProjectile" ParentName="BaseBullet">
+    <defName>Bullet_LaserShotgun</defName>
+    <thingClass>LaserWeapons.Projectile_Laser</thingClass>
+    <label>Bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/LaserMedium</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>LaserImpact</damageDef>
+      <damageAmountBase>7</damageAmountBase>
+      <speed>45</speed>
+    </projectile>
+    <preFiringInitialIntensity>0</preFiringInitialIntensity>
+    <preFiringFinalIntensity>1</preFiringFinalIntensity>
+    <postFiringInitialIntensity>1</postFiringInitialIntensity>
+    <postFiringFinalIntensity>0</postFiringFinalIntensity>
+    <preFiringDuration>7</preFiringDuration>
+    <postFiringDuration>60</postFiringDuration>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseHumanGun">
+    <defName>Gun_LaserShotgun</defName>
+    <label>Laser Shotgun</label>
+    <description>A laser shotgun, wide spread and good at close range.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/Laser/LaserShotgun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>600</MarketValue>
+      <AccuracyTouch>0.83</AccuracyTouch>
+      <AccuracyShort>0.90</AccuracyShort>
+      <AccuracyMedium>0.80</AccuracyMedium>
+      <AccuracyLong>0.67</AccuracyLong>
+      <RangedWeapon_Cooldown>1.0</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <projectileDef>Bullet_LaserShotgun</projectileDef>
+        <warmupTicks>90</warmupTicks>
+        <range>16</range>
+        <burstShotCount>3</burstShotCount>
+        <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+        <soundCast>LazerShot</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+  
+</ThingDefs>
