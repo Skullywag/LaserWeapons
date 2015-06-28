@@ -109,7 +109,7 @@
       <AccuracyShort>0.73</AccuracyShort>
       <AccuracyMedium>0.53</AccuracyMedium>
       <AccuracyLong>0.35</AccuracyLong>
-      <RangedWeapon_Cooldown>0.66</RangedWeapon_Cooldown>
+      <RangedWeapon_Cooldown>0.76</RangedWeapon_Cooldown>
     </statBases>
     <techLevel>Midworld</techLevel>
     <verbs>
@@ -118,7 +118,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <projectileDef>Bullet_LaserPistol</projectileDef>
         <warmupTicks>54</warmupTicks>
-        <range>24</range>
+        <range>30</range>
         <soundCast>LazerShot</soundCast>
         <soundCastTail>GunTail_Light</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
@@ -163,7 +163,7 @@
       <AccuracyShort>0.95</AccuracyShort>
       <AccuracyMedium>0.75</AccuracyMedium>
       <AccuracyLong>0.62</AccuracyLong>
-      <RangedWeapon_Cooldown>0.66</RangedWeapon_Cooldown>
+      <RangedWeapon_Cooldown>0.76</RangedWeapon_Cooldown>
     </statBases>
     <techLevel>Midworld</techLevel>
     <verbs>
@@ -172,7 +172,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <projectileDef>Bullet_LaserCarbine</projectileDef>
         <warmupTicks>60</warmupTicks>
-        <range>24</range>
+        <range>32</range>
         <soundCast>LazerShot</soundCast>
         <soundCastTail>GunTail_Light</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
@@ -217,7 +217,7 @@
       <AccuracyShort>0.90</AccuracyShort>
       <AccuracyMedium>0.80</AccuracyMedium>
       <AccuracyLong>0.67</AccuracyLong>
-      <RangedWeapon_Cooldown>0.66</RangedWeapon_Cooldown>
+      <RangedWeapon_Cooldown>0.76</RangedWeapon_Cooldown>
     </statBases>
     <verbs>
       <li>
@@ -225,7 +225,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <projectileDef>Bullet_LaserRifle</projectileDef>
         <warmupTicks>90</warmupTicks>
-        <range>32</range>
+        <range>36</range>
         <soundCast>LazerShot</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
@@ -270,7 +270,7 @@
       <AccuracyShort>0.67</AccuracyShort>
       <AccuracyMedium>0.44</AccuracyMedium>
       <AccuracyLong>0.25</AccuracyLong>
-      <RangedWeapon_Cooldown>1.33</RangedWeapon_Cooldown>
+      <RangedWeapon_Cooldown>1.03</RangedWeapon_Cooldown>
     </statBases>
     <verbs>
       <li>
@@ -278,9 +278,9 @@
         <hasStandardCommand>true</hasStandardCommand>
         <projectileDef>Bullet_LaserScatter</projectileDef>
         <warmupTicks>100</warmupTicks>
-        <range>20</range>
+        <range>28</range>
         <burstShotCount>6</burstShotCount>
-        <ticksBetweenBurstShots>11</ticksBetweenBurstShots>
+        <ticksBetweenBurstShots>7</ticksBetweenBurstShots>
         <soundCast>LazerShot</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
@@ -325,7 +325,7 @@
       <AccuracyShort>0.89</AccuracyShort>
       <AccuracyMedium>0.89</AccuracyMedium>
       <AccuracyLong>0.91</AccuracyLong>
-      <RangedWeapon_Cooldown>2.33</RangedWeapon_Cooldown>
+      <RangedWeapon_Cooldown>2.03</RangedWeapon_Cooldown>
     </statBases>
     <verbs>
       <li>
@@ -333,7 +333,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <projectileDef>Bullet_LaserPrecision</projectileDef>
         <warmupTicks>240</warmupTicks>
-        <range>45</range>
+        <range>52</range>
         <soundCast>LazerShot</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
@@ -381,7 +381,7 @@
       <AccuracyShort>0.90</AccuracyShort>
       <AccuracyMedium>0.80</AccuracyMedium>
       <AccuracyLong>0.67</AccuracyLong>
-      <RangedWeapon_Cooldown>1.0</RangedWeapon_Cooldown>
+      <RangedWeapon_Cooldown>0.76</RangedWeapon_Cooldown>
     </statBases>
     <verbs>
       <li>
@@ -389,7 +389,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <projectileDef>Bullet_LaserShotgun</projectileDef>
         <warmupTicks>90</warmupTicks>
-        <range>16</range>
+        <range>22</range>
         <burstShotCount>3</burstShotCount>
         <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
         <soundCast>LazerShot</soundCast>

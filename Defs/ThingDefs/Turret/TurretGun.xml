@@ -80,7 +80,7 @@
     </graphicData>
     <projectile>
       <damageDef>LaserImpact</damageDef>
-      <damageAmountBase>7</damageAmountBase>
+      <damageAmountBase>9</damageAmountBase>
       <speed>45</speed>
     </projectile>
     <preFiringInitialIntensity>0</preFiringInitialIntensity>
@@ -108,7 +108,7 @@
       <AccuracyShort>0.64</AccuracyShort>
       <AccuracyMedium>0.41</AccuracyMedium>
       <AccuracyLong>0.22</AccuracyLong>
-      <RangedWeapon_Cooldown>0.66</RangedWeapon_Cooldown>
+      <RangedWeapon_Cooldown>1.66</RangedWeapon_Cooldown>
     </statBases>
     <weaponTags>
       <li>TurretGun</li>
@@ -118,8 +118,8 @@
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <projectileDef>Bullet_LaserTurret</projectileDef>
-        <warmupTicks>20</warmupTicks>
-        <range>25.9</range>
+        <warmupTicks>220</warmupTicks>
+        <range>54</range>
         <soundCast>LazerShot</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
         <muzzleFlashScale>12</muzzleFlashScale>
