@@ -222,7 +222,7 @@ namespace LaserWeapons
                                     }
                                 }
                             }
-                            chanceToHitCollateralTarget *= pawn.RaceProps.bodySize;
+                            chanceToHitCollateralTarget *= pawn.RaceProps.baseBodySize;
 
                             if (Rand.Value < chanceToHitCollateralTarget)
                             {
