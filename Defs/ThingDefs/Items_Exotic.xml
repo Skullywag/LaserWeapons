@@ -1,8 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <GameData>
 
-
-  <ThingDef Name="ResourceBase" Abstract="True">
+  <ThingDef Name="ResourceBaseNoRecipe" Abstract="True">
     <thingClass>ThingWithComps</thingClass>
     <label>unspecified resource</label>
     <category>Item</category>
@@ -25,12 +24,12 @@
     <pathCost>15</pathCost>
   </ThingDef>
 
-  <ThingDef ParentName="ResourceBase">
+  <ThingDef ParentName="ResourceBaseNoRecipe">
     <defName>LaserCapacitor</defName>
     <label>Laser Capacitor</label>
     <description>A storage device using a very power electrical field.</description>
     <graphicData>
-      <texPath>Things/Item/Resource/LaserCapacitor</texPath>
+      <texPath>Things/Item/Resource/Laserbox</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <resourceReadoutPriority>Middle</resourceReadoutPriority>

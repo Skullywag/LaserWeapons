@@ -111,7 +111,8 @@ namespace LaserWeapons
             {
                 Pawn launcherPawn = this.launcher as Pawn;
                 if (((launcherPawn.stances.curStance is Stance_Warmup) == false)
-                    && ((launcherPawn.stances.curStance is Stance_Cooldown) == false))
+                    && ((launcherPawn.stances.curStance is Stance_Cooldown) == false)
+                    || ((launcherPawn.Dead) == true))
                 {
                     this.Destroy(DestroyMode.Vanish);
                 }

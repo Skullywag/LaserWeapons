@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ResearchProjectDefs>
+ 
+	<ResearchProjectDef>
+		<defName>LaserTurrets</defName>
+		<label>large scale laser tech</label>
+		<description>Allows the construction of laser turrets.</description>
+		<totalCost>1100</totalCost>
+    <prerequisites>
+      <li>MicroelectronicsBasics</li>
+    </prerequisites>
+	</ResearchProjectDef>
+
+</ResearchProjectDefs>

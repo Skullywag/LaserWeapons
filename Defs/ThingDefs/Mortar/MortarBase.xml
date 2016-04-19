@@ -1,32 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ThingDefs>
 
-  <ThingDef Name="BuildingBase" Abstract="True">
-    <category>Building</category>
-    <soundImpactDefault>BulletImpactMetal</soundImpactDefault>
-    <selectable>true</selectable>
-    <drawerType>MapMeshAndRealTime</drawerType>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <repairEffect>Repair</repairEffect>
-    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
-    <filthLeaving>BuildingRubble</filthLeaving>
-  </ThingDef>
-
+  <!--=============== Mortar turret ===============-->
   <ThingDef ParentName="BuildingBase">
-    <defName>LaserTurretGun</defName>
-    <label>laser turret</label>
+    <defName>Turret_MortarLaser</defName>
+    <label>laser guided mortar</label>
     <thingClass>Building_TurretGun</thingClass>
     <graphicData>
-      <texPath>Things/Building/LaserTurret</texPath>
+      <texPath>Things/Building/Security/TurretMortarBase</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(3,3)</drawSize>
+      <drawSize>(4,4)</drawSize>
     </graphicData>
-    <uiIconPath>Things/Building/LaserTurretUI</uiIconPath>
+    <uiIconPath>Things/Building/TurretMortarLaserUI</uiIconPath>
     <altitudeLayer>Waist</altitudeLayer>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
     <statBases>
-      <MaxHitPoints>110</MaxHitPoints>
+      <MaxHitPoints>180</MaxHitPoints>
       <Flammability>1.0</Flammability>
-      <WorkToMake>2500</WorkToMake>
+      <WorkToMake>2700</WorkToMake>
       <Beauty>-60</Beauty>
     </statBases>
     <tickerType>Normal</tickerType>
@@ -43,32 +35,39 @@
       <li Class="CompProperties_Flickable"/>
       <li Class="CompProperties_Breakdownable"/>
     </comps>
-    <description>A laser turret that automatically fires at nearby enemies. Explodes when damaged.</description>
+    <description>A mortar that launches laser guided shells. Must be manned. Explodes when damaged.</description>
+    <size>(2,2)</size>
     <passability>PassThroughOnly</passability>
     <pathCost>50</pathCost>
     <fillPercent>0.4</fillPercent>
     <castEdgeShadows>true</castEdgeShadows>
-    <hasTooltip>true</hasTooltip>
     <stuffCategories>
       <li>Metallic</li>
     </stuffCategories>
-    <costStuffCount>75</costStuffCount>
+    <costStuffCount>100</costStuffCount>
     <costList>
-      <Steel>75</Steel>
-      <LaserCapacitor>2</LaserCapacitor>
+      <Steel>150</Steel>
     </costList>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
     <designationCategory>Security</designationCategory>
-    <specialDisplayRadius>25.9</specialDisplayRadius>
     <building>
       <ai_combatDangerous>true</ai_combatDangerous>
-      <turretGunDef>Gun_LaserTurret</turretGunDef>
-      <turretBurstCooldownTicks>200</turretBurstCooldownTicks>
-      <turretTopgraphicPath>Things/Building/LaserTurretGun</turretTopgraphicPath>
+      <turretGunDef>Artillery_MortarLaser</turretGunDef>
+      <turretShellDef>LaserArtilleryShell</turretShellDef>
+      <turretBurstWarmupTicks>300</turretBurstWarmupTicks>
+      <turretBurstCooldownTicks>3000</turretBurstCooldownTicks>
+      <turretTopgraphicPath>Things/Building/TurretMortarLaser_Top</turretTopgraphicPath>
+      <buildingTags>
+        <li>Artillery</li>
+        <li>Artillery_BaseDestroyer</li>
+      </buildingTags>
     </building>
+    <placeWorkers>
+      <li>PlaceWorker_NotUnderRoof</li>
+    </placeWorkers>
     <researchPrerequisites>
-      <li>LaserTurrets</li>
+      <li>Mortars</li>
     </researchPrerequisites>
   </ThingDef>
-
+  
 </ThingDefs>
