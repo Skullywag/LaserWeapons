@@ -13,3 +13,31 @@ C:\Users\mjsku_000\Desktop\RimWorldAlpha12Win\RimWorld906Win\Mods\LaserWeapons\S
 C:\Users\mjsku_000\Desktop\RimWorldAlpha12Win\RimWorld906Win\Mods\LaserWeapons\Source\LaserWeapons\obj\Debug\LaserWeapons.csprojResolveAssemblyReference.cache
 C:\Users\mjsku_000\Desktop\RimWorldAlpha12Win\RimWorld906Win\Mods\LaserWeapons\Source\LaserWeapons\obj\Debug\LaserWeapons.dll
 C:\Users\mjsku_000\Desktop\RimWorldAlpha12Win\RimWorld906Win\Mods\LaserWeapons\Source\LaserWeapons\obj\Debug\LaserWeapons.pdb
+C:\Users\mjsku\Desktop\New folder\RimWorldAlpha12dWin\RimWorld914Win\Mods\LaserWeapons\Source\LaserWeapons\bin\Debug\LaserWeapons.dll
+C:\Users\mjsku\Desktop\New folder\RimWorldAlpha12dWin\RimWorld914Win\Mods\LaserWeapons\Source\LaserWeapons\bin\Debug\LaserWeapons.pdb
+C:\Users\mjsku\Desktop\New folder\RimWorldAlpha12dWin\RimWorld914Win\Mods\LaserWeapons\Source\LaserWeapons\obj\Debug\LaserWeapons.csprojResolveAssemblyReference.cache
+C:\Users\mjsku\Desktop\New folder\RimWorldAlpha12dWin\RimWorld914Win\Mods\LaserWeapons\Source\LaserWeapons\obj\Debug\LaserWeapons.dll
+C:\Users\mjsku\Desktop\New folder\RimWorldAlpha12dWin\RimWorld914Win\Mods\LaserWeapons\Source\LaserWeapons\obj\Debug\LaserWeapons.pdb
+C:\Users\mjsku\Desktop\New folder\RimWorldAlpha12dWin\RimWorld914Win\Mods\LaserWeapons\Source\LaserWeapons\bin\Debug\Community Core Library.dll
+C:\Users\mjsku\Desktop\RimWorld1117WinDev\Mods\LaserWeapons\Source\LaserWeapons\obj\Debug\LaserWeapons.csprojResolveAssemblyReference.cache
+C:\Users\mjsku\Desktop\RimWorld1117WinDev\Mods\LaserWeapons\Source\LaserWeapons\obj\Debug\LaserWeapons.dll
+C:\Users\mjsku\Desktop\RimWorld1117WinDev\Mods\LaserWeapons\Source\LaserWeapons\obj\Debug\LaserWeapons.pdb
+C:\Users\mjsku\Desktop\RimWorld1117WinDev\Mods\LaserWeapons\Source\LaserWeapons\bin\Debug\LaserWeapons.dll
+C:\Users\mjsku\Desktop\RimWorld1117WinDev\Mods\LaserWeapons\Source\LaserWeapons\bin\Debug\LaserWeapons.pdb
+C:\Users\mjsku\Desktop\RimWorld1131WinDev\Mods\LaserWeapons\Source\LaserWeapons\bin\Debug\LaserWeapons.dll
+C:\Users\mjsku\Desktop\RimWorld1131WinDev\Mods\LaserWeapons\Source\LaserWeapons\bin\Debug\LaserWeapons.pdb
+C:\Users\mjsku\Desktop\RimWorld1131WinDev\Mods\LaserWeapons\Source\LaserWeapons\obj\Debug\LaserWeapons.csprojResolveAssemblyReference.cache
+C:\Users\mjsku\Desktop\RimWorld1131WinDev\Mods\LaserWeapons\Source\LaserWeapons\obj\Debug\LaserWeapons.dll
+C:\Users\mjsku\Desktop\RimWorld1131WinDev\Mods\LaserWeapons\Source\LaserWeapons\obj\Debug\LaserWeapons.pdb
+C:\Users\mjsku\Desktop\RimWorldAlpha13Win\RimWorld1135Win\Mods\LaserWeapons\Source\LaserWeapons\bin\Debug\LaserWeapons.dll
+C:\Users\mjsku\Desktop\RimWorldAlpha13Win\RimWorld1135Win\Mods\LaserWeapons\Source\LaserWeapons\bin\Debug\LaserWeapons.pdb
+C:\Users\mjsku\Desktop\RimWorldAlpha13Win\RimWorld1135Win\Mods\LaserWeapons\Source\LaserWeapons\obj\Debug\LaserWeapons.csprojResolveAssemblyReference.cache
+C:\Users\mjsku\Desktop\RimWorldAlpha13Win\RimWorld1135Win\Mods\LaserWeapons\Source\LaserWeapons\obj\Debug\LaserWeapons.dll
+C:\Users\mjsku\Desktop\RimWorldAlpha13Win\RimWorld1135Win\Mods\LaserWeapons\Source\LaserWeapons\obj\Debug\LaserWeapons.pdb
+C:\Users\mjsku\Desktop\RimWorldAlpha13Win\RimWorld1135Win\Mods\LaserWeapons\Source\LaserWeapons\bin\Debug\Community Core Library.dll
+\\MAIN-RIG\LocalShare\RimWorldAlpha13Win\RimWorld1135Win\Mods\LaserWeapons\Source\LaserWeapons\bin\Debug\LaserWeapons.dll
+\\MAIN-RIG\LocalShare\RimWorldAlpha13Win\RimWorld1135Win\Mods\LaserWeapons\Source\LaserWeapons\bin\Debug\LaserWeapons.pdb
+\\MAIN-RIG\LocalShare\RimWorldAlpha13Win\RimWorld1135Win\Mods\LaserWeapons\Source\LaserWeapons\bin\Debug\Community Core Library.dll
+\\MAIN-RIG\LocalShare\RimWorldAlpha13Win\RimWorld1135Win\Mods\LaserWeapons\Source\LaserWeapons\obj\Debug\LaserWeapons.csprojResolveAssemblyReference.cache
+\\MAIN-RIG\LocalShare\RimWorldAlpha13Win\RimWorld1135Win\Mods\LaserWeapons\Source\LaserWeapons\obj\Debug\LaserWeapons.dll
+\\MAIN-RIG\LocalShare\RimWorldAlpha13Win\RimWorld1135Win\Mods\LaserWeapons\Source\LaserWeapons\obj\Debug\LaserWeapons.pdb

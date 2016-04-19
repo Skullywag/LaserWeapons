@@ -17,7 +17,7 @@
     <statBases>
       <MaxHitPoints>100</MaxHitPoints>
       <Flammability>1.0</Flammability>
-      <DeteriorationRate>1</DeteriorationRate>
+      <DeteriorationRate>2</DeteriorationRate>
       <SellPriceFactor>0.5</SellPriceFactor>
     </statBases>
     <altitudeLayer>Item</altitudeLayer>
@@ -31,19 +31,16 @@
       <li>ITab_Art</li>
     </inspectorTabs>
     <comps>
-      <li>
-        <compClass>CompForbiddable</compClass>
-      </li>
+      <li Class="CompProperties_Forbiddable"/>
       <li>
         <compClass>CompEquippable</compClass>
       </li>
       <li>
         <compClass>CompQuality</compClass>
       </li>
-      <li>
-        <compClass>CompArt</compClass>
-        <nameMaker>NamerGun</nameMaker>
-        <descriptionMaker>ArtWeaponGun</descriptionMaker>
+      <li Class="CompProperties_Art">
+        <nameMaker>ArtName_WeaponGun</nameMaker>
+        <descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
         <minQualityForArtistic>Excellent</minQualityForArtistic>
       </li>
     </comps>
@@ -51,8 +48,28 @@
       <Steel>20</Steel>
     </smeltProducts>
   </ThingDef>
+
+  <ThingDef Name="BaseMakeableGun" ParentName="BaseGun" Abstract="True">
+    <recipeMaker>
+      <workSpeedStat>SmithingSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <recipeUsers>
+        <li>TableMachining</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+    </recipeMaker>
+  </ThingDef>
   
   <ThingDef Name="BaseHumanGun" ParentName="BaseGun" Abstract="True">
+    <weaponTags>
+      <li>Gun</li>
+    </weaponTags>
+    <soundInteract>EnergyPickup</soundInteract>
+  </ThingDef>
+  
+  <ThingDef Name="BaseHumanMakeableGun" ParentName="BaseMakeableGun" Abstract="True">
     <weaponTags>
       <li>Gun</li>
     </weaponTags>
@@ -87,6 +104,17 @@
       <damageAmountBase>6</damageAmountBase>
       <speed>45</speed>
     </projectile>
+    <weaponTags>
+      <li>MedievalShields_ValidSidearm</li>
+    </weaponTags>
+    <comps>
+      <li Class="LaserWeapons.CompProperties_ExtraDamage">
+        <compClass>LaserWeapons.CompExtraDamage</compClass>
+        <damageDef>Stun</damageDef>
+        <damageAmount>15</damageAmount>
+        <chanceToProc>0.1</chanceToProc>
+      </li>
+    </comps>
     <preFiringInitialIntensity>0</preFiringInitialIntensity>
     <preFiringFinalIntensity>1</preFiringFinalIntensity>
     <postFiringInitialIntensity>1</postFiringInitialIntensity>
@@ -95,7 +123,7 @@
     <postFiringDuration>23</postFiringDuration>
   </ThingDef>
 
-  <ThingDef ParentName="BaseHumanGun">
+  <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>Gun_LaserPistol</defName>
     <label>Laser Pistol</label>
     <description>A laser pistol sidearm.</description>
@@ -107,23 +135,38 @@
       <MarketValue>400</MarketValue>
       <AccuracyTouch>0.93</AccuracyTouch>
       <AccuracyShort>0.73</AccuracyShort>
-      <AccuracyMedium>0.53</AccuracyMedium>
-      <AccuracyLong>0.35</AccuracyLong>
+      <AccuracyMedium>0.68</AccuracyMedium>
+      <AccuracyLong>0.60</AccuracyLong>
       <RangedWeapon_Cooldown>0.76</RangedWeapon_Cooldown>
     </statBases>
+    <costList>
+      <Steel>50</Steel>
+      <Components>2</Components>
+      <LaserCapacitor>1</LaserCapacitor>
+    </costList>
     <techLevel>Midworld</techLevel>
+    <weaponTags>
+      <li>MedievalShields_ValidSidearm</li>
+    </weaponTags>
     <verbs>
       <li>
-        <verbClass>Verb_Shoot</verbClass>
+        <verbClass>LaserWeapons.Verb_ShootReload</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <projectileDef>Bullet_LaserPistol</projectileDef>
         <warmupTicks>54</warmupTicks>
-        <range>30</range>
+        <range>32</range>
         <soundCast>LazerShot</soundCast>
         <soundCastTail>GunTail_Light</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
+    <comps>
+      <li Class="LaserWeapons.CompProperties_Reloader">
+        <compClass>LaserWeapons.CompReloader</compClass>
+        <roundPerMag>7</roundPerMag>
+        <reloadTick>180</reloadTick>
+      </li>
+    </comps>
   </ThingDef>
 
   <!-- ========================================================= -->
@@ -141,6 +184,14 @@
       <damageAmountBase>7</damageAmountBase>
       <speed>45</speed>
     </projectile>
+    <comps>
+      <li Class="LaserWeapons.CompProperties_ExtraDamage">
+        <compClass>LaserWeapons.CompExtraDamage</compClass>
+        <damageDef>Stun</damageDef>
+        <damageAmount>15</damageAmount>
+        <chanceToProc>0.1</chanceToProc>
+      </li>
+    </comps>
     <preFiringInitialIntensity>0</preFiringInitialIntensity>
     <preFiringFinalIntensity>1</preFiringFinalIntensity>
     <postFiringInitialIntensity>1</postFiringInitialIntensity>
@@ -149,7 +200,7 @@
     <postFiringDuration>35</postFiringDuration>
   </ThingDef>
 
-  <ThingDef ParentName="BaseHumanGun">
+  <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>Gun_LaserCarbine</defName>
     <label>Laser Carbine</label>
     <description>A short range, lightweight laser rifle.</description>
@@ -165,19 +216,31 @@
       <AccuracyLong>0.62</AccuracyLong>
       <RangedWeapon_Cooldown>0.76</RangedWeapon_Cooldown>
     </statBases>
+    <costList>
+      <Steel>90</Steel>
+      <Components>3</Components>
+      <LaserCapacitor>1</LaserCapacitor>
+    </costList>
     <techLevel>Midworld</techLevel>
     <verbs>
       <li>
-        <verbClass>Verb_Shoot</verbClass>
+        <verbClass>LaserWeapons.Verb_ShootReload</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <projectileDef>Bullet_LaserCarbine</projectileDef>
         <warmupTicks>60</warmupTicks>
-        <range>32</range>
+        <range>34</range>
         <soundCast>LazerShot</soundCast>
         <soundCastTail>GunTail_Light</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
+    <comps>
+      <li Class="LaserWeapons.CompProperties_Reloader">
+        <compClass>LaserWeapons.CompReloader</compClass>
+        <roundPerMag>20</roundPerMag>
+        <reloadTick>190</reloadTick>
+      </li>
+    </comps>
   </ThingDef>
   
   <!-- =================================================== -->
@@ -195,6 +258,14 @@
       <damageAmountBase>7</damageAmountBase>
       <speed>45</speed>
     </projectile>
+    <comps>
+      <li Class="LaserWeapons.CompProperties_ExtraDamage">
+        <compClass>LaserWeapons.CompExtraDamage</compClass>
+        <damageDef>Stun</damageDef>
+        <damageAmount>15</damageAmount>
+        <chanceToProc>0.1</chanceToProc>
+      </li>
+    </comps>
     <preFiringInitialIntensity>0</preFiringInitialIntensity>
     <preFiringFinalIntensity>1</preFiringFinalIntensity>
     <postFiringInitialIntensity>1</postFiringInitialIntensity>
@@ -203,7 +274,7 @@
     <postFiringDuration>60</postFiringDuration>
   </ThingDef>
 
-  <ThingDef ParentName="BaseHumanGun">
+  <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>Gun_LaserRifle</defName>
     <label>Laser Rifle</label>
     <description>A laser rifle with good stopping power and range.</description>
@@ -219,9 +290,14 @@
       <AccuracyLong>0.67</AccuracyLong>
       <RangedWeapon_Cooldown>0.76</RangedWeapon_Cooldown>
     </statBases>
+    <costList>
+      <Steel>130</Steel>
+      <Components>4</Components>
+      <LaserCapacitor>1</LaserCapacitor>
+    </costList>
     <verbs>
       <li>
-        <verbClass>Verb_Shoot</verbClass>
+        <verbClass>LaserWeapons.Verb_ShootReload</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <projectileDef>Bullet_LaserRifle</projectileDef>
         <warmupTicks>90</warmupTicks>
@@ -231,6 +307,13 @@
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
+    <comps>
+      <li Class="LaserWeapons.CompProperties_Reloader">
+        <compClass>LaserWeapons.CompReloader</compClass>
+        <roundPerMag>30</roundPerMag>
+        <reloadTick>190</reloadTick>
+      </li>
+    </comps>
   </ThingDef>
   
   <!-- ============================================================== -->
@@ -248,6 +331,14 @@
       <damageAmountBase>6</damageAmountBase>
       <speed>45</speed>
     </projectile>
+    <comps>
+      <li Class="LaserWeapons.CompProperties_ExtraDamage">
+        <compClass>LaserWeapons.CompExtraDamage</compClass>
+        <damageDef>Stun</damageDef>
+        <damageAmount>15</damageAmount>
+        <chanceToProc>0.1</chanceToProc>
+      </li>
+    </comps>
     <preFiringInitialIntensity>0</preFiringInitialIntensity>
     <preFiringFinalIntensity>1</preFiringFinalIntensity>
     <postFiringInitialIntensity>1</postFiringInitialIntensity>
@@ -256,7 +347,7 @@
     <postFiringDuration>50</postFiringDuration>
   </ThingDef>
 
-  <ThingDef ParentName="BaseHumanGun">
+  <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>Gun_LaserScatter</defName>
     <label>Laser Scattergun</label>
     <description>A laser scattergun able to lay down lots of fire at the cost of accuracy at long ranges.</description>
@@ -266,19 +357,24 @@
     </graphicData>
     <statBases>
       <MarketValue>800</MarketValue>
-      <AccuracyTouch>0.53</AccuracyTouch>
-      <AccuracyShort>0.67</AccuracyShort>
-      <AccuracyMedium>0.44</AccuracyMedium>
-      <AccuracyLong>0.25</AccuracyLong>
+      <AccuracyTouch>0.63</AccuracyTouch>
+      <AccuracyShort>0.77</AccuracyShort>
+      <AccuracyMedium>0.54</AccuracyMedium>
+      <AccuracyLong>0.35</AccuracyLong>
       <RangedWeapon_Cooldown>1.03</RangedWeapon_Cooldown>
     </statBases>
+    <costList>
+      <Steel>110</Steel>
+      <Components>4</Components>
+      <LaserCapacitor>1</LaserCapacitor>
+    </costList>
     <verbs>
       <li>
-        <verbClass>Verb_Shoot</verbClass>
+        <verbClass>LaserWeapons.Verb_ShootReload</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <projectileDef>Bullet_LaserScatter</projectileDef>
         <warmupTicks>100</warmupTicks>
-        <range>28</range>
+        <range>30</range>
         <burstShotCount>6</burstShotCount>
         <ticksBetweenBurstShots>7</ticksBetweenBurstShots>
         <soundCast>LazerShot</soundCast>
@@ -286,6 +382,13 @@
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
+    <comps>
+      <li Class="LaserWeapons.CompProperties_Reloader">
+        <compClass>LaserWeapons.CompReloader</compClass>
+        <roundPerMag>100</roundPerMag>
+        <reloadTick>300</reloadTick>
+      </li>
+    </comps>
   </ThingDef>
 
   <!-- ============================================================== -->
@@ -303,6 +406,14 @@
       <damageAmountBase>30</damageAmountBase>
       <speed>45</speed>
     </projectile>
+    <comps>
+      <li Class="LaserWeapons.CompProperties_ExtraDamage">
+        <compClass>LaserWeapons.CompExtraDamage</compClass>
+        <damageDef>Stun</damageDef>
+        <damageAmount>30</damageAmount>
+        <chanceToProc>0.2</chanceToProc>
+      </li>
+    </comps>
     <preFiringInitialIntensity>0</preFiringInitialIntensity>
     <preFiringFinalIntensity>1</preFiringFinalIntensity>
     <postFiringInitialIntensity>1</postFiringInitialIntensity>
@@ -311,7 +422,7 @@
     <postFiringDuration>75</postFiringDuration>
   </ThingDef>
 
-  <ThingDef ParentName="BaseHumanGun">
+  <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>Gun_LaserPrecision</defName>
     <label>Laser Precision Rifle</label>
     <description>A laser sniper rifle, highly accurate but with a low rate of fire.</description>
@@ -327,9 +438,14 @@
       <AccuracyLong>0.91</AccuracyLong>
       <RangedWeapon_Cooldown>2.03</RangedWeapon_Cooldown>
     </statBases>
+    <costList>
+      <Steel>150</Steel>
+      <Components>6</Components>
+      <LaserCapacitor>1</LaserCapacitor>
+    </costList>
     <verbs>
       <li>
-        <verbClass>Verb_Shoot</verbClass>
+        <verbClass>LaserWeapons.Verb_ShootReload</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <projectileDef>Bullet_LaserPrecision</projectileDef>
         <warmupTicks>240</warmupTicks>
@@ -339,6 +455,13 @@
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
+    <comps>
+      <li Class="LaserWeapons.CompProperties_Reloader">
+        <compClass>LaserWeapons.CompReloader</compClass>
+        <roundPerMag>3</roundPerMag>
+        <reloadTick>200</reloadTick>
+      </li>
+    </comps>
     <weaponTags>
       <li>SniperRifle</li>
     </weaponTags>
@@ -359,6 +482,14 @@
       <damageAmountBase>7</damageAmountBase>
       <speed>45</speed>
     </projectile>
+    <comps>
+      <li Class="LaserWeapons.CompProperties_ExtraDamage">
+        <compClass>LaserWeapons.CompExtraDamage</compClass>
+        <damageDef>Stun</damageDef>
+        <damageAmount>15</damageAmount>
+        <chanceToProc>0.1</chanceToProc>
+      </li>
+    </comps>
     <preFiringInitialIntensity>0</preFiringInitialIntensity>
     <preFiringFinalIntensity>1</preFiringFinalIntensity>
     <postFiringInitialIntensity>1</postFiringInitialIntensity>
@@ -367,7 +498,7 @@
     <postFiringDuration>60</postFiringDuration>
   </ThingDef>
 
-  <ThingDef ParentName="BaseHumanGun">
+  <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>Gun_LaserShotgun</defName>
     <label>Laser Shotgun</label>
     <description>A laser shotgun, wide spread and good at close range.</description>
@@ -383,13 +514,18 @@
       <AccuracyLong>0.67</AccuracyLong>
       <RangedWeapon_Cooldown>0.76</RangedWeapon_Cooldown>
     </statBases>
+    <costList>
+      <Steel>130</Steel>
+      <Components>3</Components>
+      <LaserCapacitor>1</LaserCapacitor>
+    </costList>
     <verbs>
       <li>
-        <verbClass>Verb_Shoot</verbClass>
+        <verbClass>LaserWeapons.Verb_ShootReload</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <projectileDef>Bullet_LaserShotgun</projectileDef>
         <warmupTicks>90</warmupTicks>
-        <range>22</range>
+        <range>24</range>
         <burstShotCount>3</burstShotCount>
         <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
         <soundCast>LazerShot</soundCast>
@@ -397,6 +533,13 @@
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
+    <comps>
+      <li Class="LaserWeapons.CompProperties_Reloader">
+        <compClass>LaserWeapons.CompReloader</compClass>
+        <roundPerMag>18</roundPerMag>
+        <reloadTick>240</reloadTick>
+      </li>
+    </comps>
   </ThingDef>
   
 </ThingDefs>
