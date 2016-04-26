@@ -94,7 +94,7 @@ namespace LaserWeapons
             {
                 if (this.reloaderProp.throwMote)
                 {
-                    MoteThrower.ThrowText(this.Wielder.Position.ToVector3Shifted(), Translator.Translate("CR_ReloadingMote"), -1);
+                    MoteThrower.ThrowText(this.Wielder.Position.ToVector3Shifted(), Translator.Translate("Laser_ReloadingMote"), -1);
                 }
                 Job job = new Job(DefDatabase<JobDef>.GetNamed("LaserReloadWeapon", true), this.Wielder, this.parent)
                 {
@@ -115,7 +115,7 @@ namespace LaserWeapons
             SoundStarter.PlayOneShot(this.parent.def.soundInteract, SoundInfo.InWorld(this.Wielder.Position, 0));
             if (this.reloaderProp.throwMote)
             {
-                MoteThrower.ThrowText(this.Wielder.Position.ToVector3Shifted(), Translator.Translate("CR_ReloadedMote"), -1);
+                MoteThrower.ThrowText(this.Wielder.Position.ToVector3Shifted(), Translator.Translate("Laser_ReloadedMote"), -1);
             }
             this.count = this.reloaderProp.roundPerMag;
             this.needReload = false;
@@ -132,8 +132,8 @@ namespace LaserWeapons
                 Command_Action command_Action = new Command_Action
                 {
                     action = new Action(this.StartReload),
-                    defaultLabel = Translator.Translate("CR_ReloadLabel"),
-                    defaultDesc = Translator.Translate("CR_ReloadDesc"),
+                    defaultLabel = Translator.Translate("Laser_ReloadLabel"),
+                    defaultDesc = Translator.Translate("Laser_ReloadDesc"),
                     icon = ContentFinder<Texture2D>.Get("UI/Buttons/Reload", true)
                 };
                 yield return command_Action;

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
 
-    <CR_ReloadLabel>Reload</CR_ReloadLabel>
-    <CR_ReloadDesc>Reloads this gun.</CR_ReloadDesc>
+    <Laser_ReloadLabel>Reload</Laser_ReloadLabel>
+    <Laser_ReloadDesc>Reloads this gun.</Laser_ReloadDesc>
 
-    <CR_ReloadingMote>Reloading!</CR_ReloadingMote>
-    <CR_ReloadedMote>Reloaded!</CR_ReloadedMote>
+    <Laser_ReloadingMote>Reloading!</Laser_ReloadingMote>
+    <Laser_ReloadedMote>Reloaded!</Laser_ReloadedMote>
 	
 </LanguageData>
