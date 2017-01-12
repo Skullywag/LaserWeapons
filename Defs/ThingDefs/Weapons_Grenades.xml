@@ -5,7 +5,6 @@
 
   <ThingDef Name="BaseEquipment" Abstract="True">
     <equipmentType>Secondary</equipmentType>
-    <label>equipment lacks label</label>
     <thingClass>ThingWithComps</thingClass>
     <category>Item</category>
     <useHitPoints>true</useHitPoints>
@@ -18,7 +17,7 @@
       <MaxHitPoints>100</MaxHitPoints>
       <Flammability>1.0</Flammability>
       <DeteriorationRate>2</DeteriorationRate>
-      <SellPriceFactor>0.5</SellPriceFactor>
+      <Beauty>-6</Beauty>
     </statBases>
     <altitudeLayer>Item</altitudeLayer>
     <description>Equipment lacks desc.</description>
@@ -77,7 +76,7 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>InteractGrenade</soundInteract>
-    <techLevel>Midworld</techLevel>
+    <techLevel>Industrial</techLevel>
     <statBases>
       <MarketValue>600</MarketValue>
       <RangedWeapon_Cooldown>2.66</RangedWeapon_Cooldown>
@@ -95,7 +94,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <range>12.9</range>
         <forcedMissRadius>1.0</forcedMissRadius>
-        <warmupTicks>90</warmupTicks>
+        <warmupTime>1.5</warmupTime>
         <noiseRadius>4</noiseRadius>
         <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
         <soundCast>ThrowGrenade</soundCast>
@@ -105,6 +104,9 @@
         <projectileDef>Proj_GrenadeFusion</projectileDef>
       </li>
     </verbs>
+    <smeltProducts>
+      <Steel>10</Steel>
+    </smeltProducts>
   </ThingDef>
 
 </ThingDefs>

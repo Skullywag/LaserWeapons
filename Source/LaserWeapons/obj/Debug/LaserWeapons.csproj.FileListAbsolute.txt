@@ -41,3 +41,45 @@ C:\Users\mjsku\Desktop\RimWorldAlpha13Win\RimWorld1135Win\Mods\LaserWeapons\Sour
 \\MAIN-RIG\LocalShare\RimWorldAlpha13Win\RimWorld1135Win\Mods\LaserWeapons\Source\LaserWeapons\obj\Debug\LaserWeapons.csprojResolveAssemblyReference.cache
 \\MAIN-RIG\LocalShare\RimWorldAlpha13Win\RimWorld1135Win\Mods\LaserWeapons\Source\LaserWeapons\obj\Debug\LaserWeapons.dll
 \\MAIN-RIG\LocalShare\RimWorldAlpha13Win\RimWorld1135Win\Mods\LaserWeapons\Source\LaserWeapons\obj\Debug\LaserWeapons.pdb
+C:\Users\mjsku\Desktop\RimWorld1232WinDev\Mods\LaserWeapons\Source\LaserWeapons\bin\Debug\LaserWeapons.dll
+C:\Users\mjsku\Desktop\RimWorld1232WinDev\Mods\LaserWeapons\Source\LaserWeapons\bin\Debug\LaserWeapons.pdb
+C:\Users\mjsku\Desktop\RimWorld1232WinDev\Mods\LaserWeapons\Source\LaserWeapons\bin\Debug\Assembly-CSharp.dll
+C:\Users\mjsku\Desktop\RimWorld1232WinDev\Mods\LaserWeapons\Source\LaserWeapons\bin\Debug\Community Core Library.dll
+C:\Users\mjsku\Desktop\RimWorld1232WinDev\Mods\LaserWeapons\Source\LaserWeapons\bin\Debug\UnityEngine.dll
+C:\Users\mjsku\Desktop\RimWorld1232WinDev\Mods\LaserWeapons\Source\LaserWeapons\bin\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\mjsku\Desktop\RimWorld1232WinDev\Mods\LaserWeapons\Source\LaserWeapons\bin\Debug\NAudio.dll
+C:\Users\mjsku\Desktop\RimWorld1232WinDev\Mods\LaserWeapons\Source\LaserWeapons\bin\Debug\NVorbis.dll
+C:\Users\mjsku\Desktop\RimWorld1232WinDev\Mods\LaserWeapons\Source\LaserWeapons\obj\Debug\LaserWeapons.csprojResolveAssemblyReference.cache
+C:\Users\mjsku\Desktop\RimWorld1232WinDev\Mods\LaserWeapons\Source\LaserWeapons\obj\Debug\LaserWeapons.dll
+C:\Users\mjsku\Desktop\RimWorld1232WinDev\Mods\LaserWeapons\Source\LaserWeapons\obj\Debug\LaserWeapons.pdb
+C:\Users\mjsku\Desktop\RimWorldAlpha15cWin\RimWorld1284Win\Mods\LaserWeapons\Source\LaserWeapons\bin\Debug\LaserWeapons.dll
+C:\Users\mjsku\Desktop\RimWorldAlpha15cWin\RimWorld1284Win\Mods\LaserWeapons\Source\LaserWeapons\bin\Debug\LaserWeapons.pdb
+C:\Users\mjsku\Desktop\RimWorldAlpha15cWin\RimWorld1284Win\Mods\LaserWeapons\Source\LaserWeapons\bin\Debug\Assembly-CSharp.dll
+C:\Users\mjsku\Desktop\RimWorldAlpha15cWin\RimWorld1284Win\Mods\LaserWeapons\Source\LaserWeapons\bin\Debug\UnityEngine.dll
+C:\Users\mjsku\Desktop\RimWorldAlpha15cWin\RimWorld1284Win\Mods\LaserWeapons\Source\LaserWeapons\bin\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\mjsku\Desktop\RimWorldAlpha15cWin\RimWorld1284Win\Mods\LaserWeapons\Source\LaserWeapons\bin\Debug\NAudio.dll
+C:\Users\mjsku\Desktop\RimWorldAlpha15cWin\RimWorld1284Win\Mods\LaserWeapons\Source\LaserWeapons\bin\Debug\NVorbis.dll
+C:\Users\mjsku\Desktop\RimWorldAlpha15cWin\RimWorld1284Win\Mods\LaserWeapons\Source\LaserWeapons\obj\Debug\LaserWeapons.csprojResolveAssemblyReference.cache
+C:\Users\mjsku\Desktop\RimWorldAlpha15cWin\RimWorld1284Win\Mods\LaserWeapons\Source\LaserWeapons\obj\Debug\LaserWeapons.dll
+C:\Users\mjsku\Desktop\RimWorldAlpha15cWin\RimWorld1284Win\Mods\LaserWeapons\Source\LaserWeapons\obj\Debug\LaserWeapons.pdb
+C:\Users\mjsku\Desktop\RimWorldAlpha15cWin\RimWorld1284Win\Mods\LaserWeapons - A15c - Waiting CCL for reload\Source\LaserWeapons\bin\Debug\LaserWeapons.dll
+C:\Users\mjsku\Desktop\RimWorldAlpha15cWin\RimWorld1284Win\Mods\LaserWeapons - A15c - Waiting CCL for reload\Source\LaserWeapons\bin\Debug\LaserWeapons.pdb
+C:\Users\mjsku\Desktop\RimWorldAlpha15cWin\RimWorld1284Win\Mods\LaserWeapons - A15c - Waiting CCL for reload\Source\LaserWeapons\bin\Debug\Assembly-CSharp.dll
+C:\Users\mjsku\Desktop\RimWorldAlpha15cWin\RimWorld1284Win\Mods\LaserWeapons - A15c - Waiting CCL for reload\Source\LaserWeapons\bin\Debug\UnityEngine.dll
+C:\Users\mjsku\Desktop\RimWorldAlpha15cWin\RimWorld1284Win\Mods\LaserWeapons - A15c - Waiting CCL for reload\Source\LaserWeapons\bin\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\mjsku\Desktop\RimWorldAlpha15cWin\RimWorld1284Win\Mods\LaserWeapons - A15c - Waiting CCL for reload\Source\LaserWeapons\bin\Debug\NAudio.dll
+C:\Users\mjsku\Desktop\RimWorldAlpha15cWin\RimWorld1284Win\Mods\LaserWeapons - A15c - Waiting CCL for reload\Source\LaserWeapons\bin\Debug\NVorbis.dll
+C:\Users\mjsku\Desktop\RimWorldAlpha15cWin\RimWorld1284Win\Mods\LaserWeapons - A15c - Waiting CCL for reload\Source\LaserWeapons\obj\Debug\LaserWeapons.csprojResolveAssemblyReference.cache
+C:\Users\mjsku\Desktop\RimWorldAlpha15cWin\RimWorld1284Win\Mods\LaserWeapons - A15c - Waiting CCL for reload\Source\LaserWeapons\obj\Debug\LaserWeapons.dll
+C:\Users\mjsku\Desktop\RimWorldAlpha15cWin\RimWorld1284Win\Mods\LaserWeapons - A15c - Waiting CCL for reload\Source\LaserWeapons\obj\Debug\LaserWeapons.pdb
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LaserWeapons-A16\Source\LaserWeapons\bin\Debug\LaserWeapons.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LaserWeapons-A16\Source\LaserWeapons\bin\Debug\LaserWeapons.pdb
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LaserWeapons-A16\Source\LaserWeapons\bin\Debug\Assembly-CSharp.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LaserWeapons-A16\Source\LaserWeapons\bin\Debug\UnityEngine.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LaserWeapons-A16\Source\LaserWeapons\bin\Debug\Assembly-CSharp-firstpass.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LaserWeapons-A16\Source\LaserWeapons\bin\Debug\NAudio.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LaserWeapons-A16\Source\LaserWeapons\bin\Debug\NVorbis.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LaserWeapons-A16\Source\LaserWeapons\bin\Debug\UnityEngine.xml
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LaserWeapons-A16\Source\LaserWeapons\obj\Debug\LaserWeapons.csprojResolveAssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LaserWeapons-A16\Source\LaserWeapons\obj\Debug\LaserWeapons.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LaserWeapons-A16\Source\LaserWeapons\obj\Debug\LaserWeapons.pdb

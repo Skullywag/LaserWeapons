@@ -6,7 +6,7 @@
     <thingClass>LaserWeapons.Projectile_Laser</thingClass>
     <label>Bullet</label>
     <graphicData>
-      <texPath>Things/Projectile/LaserMedium</texPath>
+      <texPath>Things/Projectile/LaserSmall</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
@@ -14,12 +14,23 @@
       <damageAmountBase>9</damageAmountBase>
       <speed>45</speed>
     </projectile>
+    <weaponTags>
+      <li>MedievalShields_ValidSidearm</li>
+    </weaponTags>
+    <comps>
+      <li Class="LaserWeapons.CompProperties_ExtraDamage">
+        <compClass>LaserWeapons.CompExtraDamage</compClass>
+        <damageDef>Stun</damageDef>
+        <damageAmount>15</damageAmount>
+        <chanceToProc>0.1</chanceToProc>
+      </li>
+    </comps>
     <preFiringInitialIntensity>0</preFiringInitialIntensity>
     <preFiringFinalIntensity>1</preFiringFinalIntensity>
     <postFiringInitialIntensity>1</postFiringInitialIntensity>
     <postFiringFinalIntensity>0</postFiringFinalIntensity>
     <preFiringDuration>7</preFiringDuration>
-    <postFiringDuration>60</postFiringDuration>
+    <postFiringDuration>23</postFiringDuration>
   </ThingDef>
 
   <ThingDef ParentName="BaseHumanGun">
@@ -49,7 +60,7 @@
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <projectileDef>Bullet_LaserTurret</projectileDef>
-        <warmupTicks>220</warmupTicks>
+        <warmupTime>1.5</warmupTime>
         <range>54</range>
         <soundCast>LazerShot</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>

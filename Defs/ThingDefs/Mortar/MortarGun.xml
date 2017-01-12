@@ -67,7 +67,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <projectileDef>Bullet_MortarLaser</projectileDef>
         <forcedMissRadius>3</forcedMissRadius>
-        <warmupTicks>350</warmupTicks>
+        <warmupTime>5.8</warmupTime>
         <minRange>30</minRange>
         <range>400</range>
         <burstShotCount>1</burstShotCount>

@@ -22,11 +22,11 @@
       <drawSize>(3,3)</drawSize>
     </graphicData>
     <uiIconPath>Things/Building/LaserTurretUI</uiIconPath>
-    <altitudeLayer>Waist</altitudeLayer>
+    <altitudeLayer>Building</altitudeLayer>
     <statBases>
       <MaxHitPoints>110</MaxHitPoints>
       <Flammability>1.0</Flammability>
-      <WorkToMake>2500</WorkToMake>
+      <WorkToBuild>2500</WorkToBuild>
       <Beauty>-60</Beauty>
     </statBases>
     <tickerType>Normal</tickerType>
@@ -56,6 +56,7 @@
     <costList>
       <Steel>75</Steel>
       <LaserCapacitor>2</LaserCapacitor>
+      <Component>2</Component>
     </costList>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
     <designationCategory>Security</designationCategory>
@@ -63,7 +64,7 @@
     <building>
       <ai_combatDangerous>true</ai_combatDangerous>
       <turretGunDef>Gun_LaserTurret</turretGunDef>
-      <turretBurstCooldownTicks>200</turretBurstCooldownTicks>
+      <turretBurstCooldownTime>200</turretBurstCooldownTime>
       <turretTopgraphicPath>Things/Building/LaserTurretGun</turretTopgraphicPath>
     </building>
     <researchPrerequisites>

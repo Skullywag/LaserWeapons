@@ -15,8 +15,8 @@ namespace LaserWeapons
         public int tickCounter = 0;
         public Thing hitThing = null;
 
-        // Miscellaneous.
-        public const float stunChance = 0.1f;
+        // Comps
+        public CompExtraDamage compED;
         
         // Draw variables.
         public Material preFiringTexture;
@@ -35,11 +35,12 @@ namespace LaserWeapons
         public int preFiringDuration = 0;
         public int postFiringDuration = 0;
 
-        public override void SpawnSetup()
+        public override void SpawnSetup(Map map)
 		{
-			base.SpawnSetup();
-            drawingTexture = this.def.DrawMatSingle;          
-		}
+			base.SpawnSetup(map);
+            drawingTexture = this.def.DrawMatSingle;
+            compED = this.GetComp<CompExtraDamage>();
+        }
 
         /// <summary>
         /// Get parameters from XML.
@@ -174,15 +175,15 @@ namespace LaserWeapons
                 exactTestedPosition += trajectorySegment;
                 testedPosition = exactTestedPosition.ToIntVec3();
 
-                if (!exactTestedPosition.InBounds())
+                if (!exactTestedPosition.InBounds(Map))
                 {
                     this.destination = temporaryDestination;
                     break;
                 }
 
-                if (!this.def.projectile.flyOverhead && this.canFreeIntercept && segmentIndex >= 5)
+                if (!this.def.projectile.flyOverhead && this.FreeIntercept && segmentIndex >= 5)
                 {
-                    List<Thing> list = Find.ThingGrid.ThingsListAt(base.Position);
+                    List<Thing> list = Map.thingGrid.ThingsListAt(base.Position);
                     for (int i = 0; i < list.Count; i++)
                     {
                         Thing current = list[i];
@@ -268,17 +269,6 @@ namespace LaserWeapons
         /// </summary>
         protected void ImpactSomething()
         {
-            // Check impact on a thick mountain.
-            if (this.def.projectile.flyOverhead)
-            {
-                RoofDef roofDef = Find.RoofGrid.RoofAt(this.DestinationCell);
-                if (roofDef != null && roofDef.isThickRoof)
-                {
-                    this.def.projectile.soundHitThickRoof.PlayOneShot(this.DestinationCell);
-                    return;
-                }
-            }
-
             // Impact the initial targeted pawn.
             if (this.assignedTarget != null)
             {
@@ -294,14 +284,14 @@ namespace LaserWeapons
             else
             {
                 // Impact a pawn in the destination cell if present.
-                Thing thing = Find.ThingGrid.ThingAt(this.DestinationCell, ThingCategory.Pawn);
+                Thing thing = Map.thingGrid.ThingAt(this.DestinationCell, ThingCategory.Pawn);
                 if (thing != null)
                 {
                     this.Impact(thing);
                     return;
                 }
                 // Impact any cover object.
-                foreach (Thing current in Find.ThingGrid.ThingsAt(this.DestinationCell))
+                foreach (Thing current in Map.thingGrid.ThingsAt(this.DestinationCell))
                 {
                     if (current.def.fillPercent > 0f || current.def.passability != Traversability.Standable)
                     {
@@ -319,26 +309,26 @@ namespace LaserWeapons
         /// </summary>
         protected override void Impact(Thing hitThing)
         {
+            Map map = base.Map;
+            base.Impact(hitThing);
             if (hitThing != null)
             {
                 int damageAmountBase = this.def.projectile.damageAmountBase;
-                BodyPartDamageInfo value = new BodyPartDamageInfo(null, null);
-                DamageInfo dinfo = new DamageInfo(this.def.projectile.damageDef, damageAmountBase, this.launcher, this.ExactRotation.eulerAngles.y, new BodyPartDamageInfo?(value), this.equipmentDef);
+                ThingDef equipmentDef = this.equipmentDef;
+                DamageInfo dinfo = new DamageInfo(this.def.projectile.damageDef, damageAmountBase, this.ExactRotation.eulerAngles.y, this.launcher, null, equipmentDef);
                 hitThing.TakeDamage(dinfo);
-                hitThing.def.soundImpactDefault.PlayOneShot(this.DestinationCell);
                 Pawn pawn = hitThing as Pawn;
-                if (pawn != null && !pawn.Downed && Rand.Value < Projectile_Laser.stunChance)
+                if (pawn != null && !pawn.Downed && Rand.Value < compED.chanceToProc)
                 {
-                    MoteThrower.ThrowStatic(this.destination, ThingDefOf.Mote_ShotHit_Dirt, 1f);
-                    MoteThrower.ThrowMicroSparks(this.destination);
-                    hitThing.TakeDamage(new DamageInfo(DamageDefOf.Stun, 10, this.launcher, null, null));
+                    MoteMaker.ThrowMicroSparks(this.destination, Map);
+                    hitThing.TakeDamage(new DamageInfo(DefDatabase<DamageDef>.GetNamed(compED.damageDef, true), compED.damageAmount, this.ExactRotation.eulerAngles.y, this.launcher, null, null));
                 }
             }
             else
             {
-                SoundDefOf.BulletImpactGround.PlayOneShot(base.Position);
-                MoteThrower.ThrowStatic(this.ExactPosition, ThingDefOf.Mote_ShotHit_Dirt, 1f);
-                ThrowMicroSparksRed(this.ExactPosition);
+                SoundDefOf.BulletImpactGround.PlayOneShot(new TargetInfo(base.Position, map, false));
+                MoteMaker.MakeStaticMote(this.ExactPosition, map, ThingDefOf.Mote_ShotHit_Dirt, 1f);
+                ThrowMicroSparksRed(this.ExactPosition, Map);
             }
         }
         
@@ -351,20 +341,20 @@ namespace LaserWeapons
             UnityEngine.Graphics.DrawMesh(MeshPool.plane10, drawingMatrix, FadedMaterialPool.FadedVersionOf(drawingTexture, drawingIntensity), 0);
         }
 
-        public static void ThrowMicroSparksRed(Vector3 loc)
+        public static void ThrowMicroSparksRed(Vector3 loc, Map map)
         {
-            if (!loc.ShouldSpawnMotesAt() || MoteCounter.Saturated)
+            if (!loc.ShouldSpawnMotesAt(map) || map.moteCounter.SaturatedLowPriority)
             {
                 return;
             }
             MoteThrown moteThrown = (MoteThrown)ThingMaker.MakeThing(ThingDef.Named("Mote_MicroSparksRed"), null);
-            moteThrown.ScaleUniform = Rand.Range(0.8f, 1.2f);
-            moteThrown.exactRotationRate = Rand.Range(-0.2f, 0.2f);
+            moteThrown.Scale = Rand.Range(0.8f, 1.2f);
+            moteThrown.rotationRate = Rand.Range(-12f, 12f);
             moteThrown.exactPosition = loc;
             moteThrown.exactPosition -= new Vector3(0.5f, 0f, 0.5f);
             moteThrown.exactPosition += new Vector3(Rand.Value, 0f, Rand.Value);
-            moteThrown.SetVelocityAngleSpeed((float)Rand.Range(35, 45), Rand.Range(0.02f, 0.02f));
-            GenSpawn.Spawn(moteThrown, loc.ToIntVec3());
+            moteThrown.SetVelocity((float)Rand.Range(35, 45), 1.2f);
+            GenSpawn.Spawn(moteThrown, loc.ToIntVec3(), map);
         }
     }
 }

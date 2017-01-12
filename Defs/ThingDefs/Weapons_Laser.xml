@@ -18,12 +18,13 @@
       <MaxHitPoints>100</MaxHitPoints>
       <Flammability>1.0</Flammability>
       <DeteriorationRate>2</DeteriorationRate>
-      <SellPriceFactor>0.5</SellPriceFactor>
+      <Beauty>-6</Beauty>
     </statBases>
     <altitudeLayer>Item</altitudeLayer>
     <alwaysHaulable>True</alwaysHaulable>
     <tickerType>Never</tickerType>
-    <techLevel>Midworld</techLevel>
+    <techLevel>Industrial</techLevel>
+    <smeltable>true</smeltable>
     <thingCategories>
       <li>WeaponsRanged</li>
     </thingCategories>
@@ -44,9 +45,6 @@
         <minQualityForArtistic>Excellent</minQualityForArtistic>
       </li>
     </comps>
-    <smeltProducts>
-      <Steel>20</Steel>
-    </smeltProducts>
   </ThingDef>
 
   <ThingDef Name="BaseMakeableGun" ParentName="BaseGun" Abstract="True">
@@ -61,14 +59,14 @@
       <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
     </recipeMaker>
   </ThingDef>
-  
+
   <ThingDef Name="BaseHumanGun" ParentName="BaseGun" Abstract="True">
     <weaponTags>
       <li>Gun</li>
     </weaponTags>
     <soundInteract>EnergyPickup</soundInteract>
   </ThingDef>
-  
+
   <ThingDef Name="BaseHumanMakeableGun" ParentName="BaseMakeableGun" Abstract="True">
     <weaponTags>
       <li>Gun</li>
@@ -141,32 +139,25 @@
     </statBases>
     <costList>
       <Steel>50</Steel>
-      <Components>2</Components>
+      <Component>2</Component>
       <LaserCapacitor>1</LaserCapacitor>
     </costList>
-    <techLevel>Midworld</techLevel>
+    <techLevel>Industrial</techLevel>
     <weaponTags>
       <li>MedievalShields_ValidSidearm</li>
     </weaponTags>
     <verbs>
       <li>
-        <verbClass>LaserWeapons.Verb_ShootReload</verbClass>
+        <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <projectileDef>Bullet_LaserPistol</projectileDef>
-        <warmupTicks>54</warmupTicks>
+        <warmupTime>0.3</warmupTime>
         <range>32</range>
         <soundCast>LazerShot</soundCast>
         <soundCastTail>GunTail_Light</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
-    <comps>
-      <li Class="LaserWeapons.CompProperties_Reloader">
-        <compClass>LaserWeapons.CompReloader</compClass>
-        <roundPerMag>7</roundPerMag>
-        <reloadTick>180</reloadTick>
-      </li>
-    </comps>
   </ThingDef>
 
   <!-- ========================================================= -->
@@ -218,29 +209,22 @@
     </statBases>
     <costList>
       <Steel>90</Steel>
-      <Components>3</Components>
+      <Component>3</Component>
       <LaserCapacitor>1</LaserCapacitor>
     </costList>
-    <techLevel>Midworld</techLevel>
+    <techLevel>Industrial</techLevel>
     <verbs>
       <li>
-        <verbClass>LaserWeapons.Verb_ShootReload</verbClass>
+        <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <projectileDef>Bullet_LaserCarbine</projectileDef>
-        <warmupTicks>60</warmupTicks>
+        <warmupTime>0.5</warmupTime>
         <range>34</range>
         <soundCast>LazerShot</soundCast>
         <soundCastTail>GunTail_Light</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
-    <comps>
-      <li Class="LaserWeapons.CompProperties_Reloader">
-        <compClass>LaserWeapons.CompReloader</compClass>
-        <roundPerMag>20</roundPerMag>
-        <reloadTick>190</reloadTick>
-      </li>
-    </comps>
   </ThingDef>
   
   <!-- =================================================== -->
@@ -292,28 +276,21 @@
     </statBases>
     <costList>
       <Steel>130</Steel>
-      <Components>4</Components>
+      <Component>4</Component>
       <LaserCapacitor>1</LaserCapacitor>
     </costList>
     <verbs>
       <li>
-        <verbClass>LaserWeapons.Verb_ShootReload</verbClass>
+        <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <projectileDef>Bullet_LaserRifle</projectileDef>
-        <warmupTicks>90</warmupTicks>
+        <warmupTime>0.9</warmupTime>
         <range>36</range>
         <soundCast>LazerShot</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
-    <comps>
-      <li Class="LaserWeapons.CompProperties_Reloader">
-        <compClass>LaserWeapons.CompReloader</compClass>
-        <roundPerMag>30</roundPerMag>
-        <reloadTick>190</reloadTick>
-      </li>
-    </comps>
   </ThingDef>
   
   <!-- ============================================================== -->
@@ -365,15 +342,15 @@
     </statBases>
     <costList>
       <Steel>110</Steel>
-      <Components>4</Components>
+      <Component>4</Component>
       <LaserCapacitor>1</LaserCapacitor>
     </costList>
     <verbs>
       <li>
-        <verbClass>LaserWeapons.Verb_ShootReload</verbClass>
+        <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <projectileDef>Bullet_LaserScatter</projectileDef>
-        <warmupTicks>100</warmupTicks>
+        <warmupTime>1.4</warmupTime>
         <range>30</range>
         <burstShotCount>6</burstShotCount>
         <ticksBetweenBurstShots>7</ticksBetweenBurstShots>
@@ -382,13 +359,6 @@
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
-    <comps>
-      <li Class="LaserWeapons.CompProperties_Reloader">
-        <compClass>LaserWeapons.CompReloader</compClass>
-        <roundPerMag>100</roundPerMag>
-        <reloadTick>300</reloadTick>
-      </li>
-    </comps>
   </ThingDef>
 
   <!-- ============================================================== -->
@@ -440,28 +410,21 @@
     </statBases>
     <costList>
       <Steel>150</Steel>
-      <Components>6</Components>
+      <Component>6</Component>
       <LaserCapacitor>1</LaserCapacitor>
     </costList>
     <verbs>
       <li>
-        <verbClass>LaserWeapons.Verb_ShootReload</verbClass>
+        <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <projectileDef>Bullet_LaserPrecision</projectileDef>
-        <warmupTicks>240</warmupTicks>
+        <warmupTime>4.0</warmupTime>
         <range>52</range>
         <soundCast>LazerShot</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
-    <comps>
-      <li Class="LaserWeapons.CompProperties_Reloader">
-        <compClass>LaserWeapons.CompReloader</compClass>
-        <roundPerMag>3</roundPerMag>
-        <reloadTick>200</reloadTick>
-      </li>
-    </comps>
     <weaponTags>
       <li>SniperRifle</li>
     </weaponTags>
@@ -516,15 +479,15 @@
     </statBases>
     <costList>
       <Steel>130</Steel>
-      <Components>3</Components>
+      <Component>3</Component>
       <LaserCapacitor>1</LaserCapacitor>
     </costList>
     <verbs>
       <li>
-        <verbClass>LaserWeapons.Verb_ShootReload</verbClass>
+        <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <projectileDef>Bullet_LaserShotgun</projectileDef>
-        <warmupTicks>90</warmupTicks>
+        <warmupTime>0.9</warmupTime>
         <range>24</range>
         <burstShotCount>3</burstShotCount>
         <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
@@ -533,13 +496,6 @@
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
-    <comps>
-      <li Class="LaserWeapons.CompProperties_Reloader">
-        <compClass>LaserWeapons.CompReloader</compClass>
-        <roundPerMag>18</roundPerMag>
-        <reloadTick>240</reloadTick>
-      </li>
-    </comps>
   </ThingDef>
   
 </ThingDefs>

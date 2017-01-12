@@ -3,11 +3,12 @@
  
 	<ResearchProjectDef>
 		<defName>LaserTurrets</defName>
-		<label>large scale laser tech</label>
+		<label>large scale laser capacitors</label>
 		<description>Allows the construction of laser turrets.</description>
-		<totalCost>1100</totalCost>
+    <baseCost>1100</baseCost>
+    <techLevel>Industrial</techLevel>
     <prerequisites>
-      <li>MicroelectronicsBasics</li>
+      <li>GunTurrets</li>
     </prerequisites>
 	</ResearchProjectDef>
 
