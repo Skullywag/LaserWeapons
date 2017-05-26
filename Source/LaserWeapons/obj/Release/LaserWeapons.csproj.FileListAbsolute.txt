@@ -1,0 +1,11 @@
+C:\Users\TJX\Desktop\RWStuff\A16ModBackup\Lasers\Source\LaserWeapons\obj\Release\LaserWeapons.csprojResolveAssemblyReference.cache
+C:\Users\TJX\Desktop\RWStuff\A16ModBackup\Lasers\Source\LaserWeapons\bin\Release\LaserWeapons.dll
+C:\Users\TJX\Desktop\RWStuff\A16ModBackup\Lasers\Source\LaserWeapons\bin\Release\LaserWeapons.pdb
+C:\Users\TJX\Desktop\RWStuff\A16ModBackup\Lasers\Source\LaserWeapons\bin\Release\Assembly-CSharp.dll
+C:\Users\TJX\Desktop\RWStuff\A16ModBackup\Lasers\Source\LaserWeapons\bin\Release\UnityEngine.dll
+C:\Users\TJX\Desktop\RWStuff\A16ModBackup\Lasers\Source\LaserWeapons\bin\Release\Assembly-CSharp-firstpass.dll
+C:\Users\TJX\Desktop\RWStuff\A16ModBackup\Lasers\Source\LaserWeapons\bin\Release\NAudio.dll
+C:\Users\TJX\Desktop\RWStuff\A16ModBackup\Lasers\Source\LaserWeapons\bin\Release\NVorbis.dll
+C:\Users\TJX\Desktop\RWStuff\A16ModBackup\Lasers\Source\LaserWeapons\bin\Release\UnityEngine.xml
+C:\Users\TJX\Desktop\RWStuff\A16ModBackup\Lasers\Source\LaserWeapons\obj\Release\LaserWeapons.dll
+C:\Users\TJX\Desktop\RWStuff\A16ModBackup\Lasers\Source\LaserWeapons\obj\Release\LaserWeapons.pdb

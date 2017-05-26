@@ -34,7 +34,7 @@ namespace LaserWeapons
         public override void PostExposeData()
         {
             base.PostExposeData();
-            Scribe_Values.LookValue<int>(ref this.count, "count", 1, false);
+            Scribe_Values.Look<int>(ref this.count, "count", 1, false);
         }
     }
 }
